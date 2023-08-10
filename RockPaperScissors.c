@@ -9,38 +9,30 @@ char getResult(char, char);
 int main(){
 
 // get user choice
-  char userChoice = getUserChoice(); 
-  printf("Human choice is: "); 
-// print computer choice
-  switch(userChoice) {
-    case 'r':
-      printf("rock\n");
-      break;
-    case 'p':
-      printf("paper\n");
-      break;
-    case 's':
-      printf("scissors\n");
-      break;
-  }
+  char userChoice = getUserChoice();    
 // get computer choice
-  char choice = getComputerChoice();
-  printf("Computer choice is: ");
- 
-// print computer choice
-  switch(choice) {
-    case 'r':
-      printf("rock\n");
-      break;
-    case 'p':
-      printf("paper\n");
-      break;
-    case 's':
-      printf("scissors\n");
-      break;
-  }
+  char choice = getComputerChoice();    
   //get result
   char result = getResult(userChoice,choice);
+
+  switch (result)
+  {
+  case 'w':
+    printf("Computer's pick: %c\n",choice);
+    printf("Your pick: %c\n", userChoice);
+    printf("You won");
+    break;
+  case 'l':
+    printf("Computer's pick: %c\n",choice);
+    printf("Your pick: %c\n", userChoice);
+    printf("You lost");
+    break;
+  case 'd':
+    printf("Computer's pick: %c\n",choice);
+    printf("Your pick: %c\n", userChoice);
+    printf("Friendship");
+    break;
+  }
      
     return 0;
 }
