@@ -5,7 +5,7 @@
 char getComputerChoice();
 int main(){
 // get computer choice
-  char choice = getComputersChoice();
+  char choice = getComputerChoice();
  
 // print computer choice
   switch(choice) {
