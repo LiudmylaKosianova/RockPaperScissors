@@ -5,6 +5,7 @@
 
 char getComputerChoice();
 char getUserChoice();
+char getResult(char, char);
 int main(){
 
 // get user choice
@@ -38,9 +39,12 @@ int main(){
       printf("scissors\n");
       break;
   }
+  //get result
+  char result = getResult(userChoice,choice);
      
     return 0;
 }
+
 char getComputerChoice(){
     //generate random number based on time
     srandom(time(NULL));
@@ -67,4 +71,15 @@ char getUserChoice(){
     scanf("%c", &userChoice);
     userChoice = tolower(userChoice);
     return userChoice;
+}
+
+char getResult(char userC, char compC){
+    
+    if(userC == compC){
+        return 'd';
+    }else if((userC == 'p' && compC == 'r')|| (userC == 's' && compC == 'p')|| (userC == 'r' && compC == 's')){
+        return 'w';
+    }else{
+        return 'l';
+    }
 }
