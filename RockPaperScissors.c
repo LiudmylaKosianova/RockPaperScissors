@@ -3,20 +3,38 @@
 #include<time.h>
 
 char getComputerChoice();
+char getUserChoice();
 int main(){
+
+// get user choice
+  char userChoice = getUserChoice(); 
+  printf("Human choice is: "); 
+// print computer choice
+  switch(userChoice) {
+    case 'r':
+      printf("rock\n");
+      break;
+    case 'p':
+      printf("paper\n");
+      break;
+    case 's':
+      printf("scissors\n");
+      break;
+  }
 // get computer choice
   char choice = getComputerChoice();
+  printf("Computer choice is: ");
  
 // print computer choice
   switch(choice) {
     case 'r':
-      printf("rock");
+      printf("rock\n");
       break;
     case 'p':
-      printf("paper");
+      printf("paper\n");
       break;
     case 's':
-      printf("scissors");
+      printf("scissors\n");
       break;
   }
      
@@ -40,4 +58,12 @@ char getComputerChoice(){
         break;
     }
     return compChoice;
+}
+
+char getUserChoice(){
+    char userChoice;
+    printf("Enter your choice(r/p/s): ");
+    scanf("%c", &userChoice);
+    userChoice = tolower(userChoice);
+    return userChoice;
 }
